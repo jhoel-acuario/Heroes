@@ -1,0 +1,48 @@
+<ng-template #divLoading>
+  <span>Cargando..</span>
+</ng-template>
+
+<div *ngIf="hero; else divLoading" class="grid container">
+  <p-card
+    [header]="hero.superhero"
+    [subheader]="hero.alter_ego"
+    [style]="{ width: '310px' }"
+    styleClass="p-card-shadow px-2 mt-5"
+  >
+    <ng-template pTemplate="header">
+      <img [alt]="hero.superhero" [src]="hero | heroImage" />
+    </ng-template>
+
+  </p-card>
+  <p-card
+  [header]="hero.superhero"
+  [subheader]="hero.alter_ego"
+  [style]="{ width: '310px' }"
+  styleClass="p-card-shadow px-2 mt-5"
+>
+ <!--  <ng-template pTemplate="header">
+    <img [alt]="hero.superhero" [src]="hero | heroImage" />
+  </ng-template> -->
+  <p>
+    <strong>{{ hero.publisher }}</strong> <br />
+    <span>{{ hero.first_appearance }}</span> <br />
+    <p-tag
+      *ngFor="let name of hero.characters.split(',')"
+      [value]="name"
+      icon="pi pi-user"
+      class="px-2 py-2"
+      severity="success"
+    ></p-tag>
+  </p>
+  <ng-template pTemplate="footer" class="flex justify-content-end">
+    <button
+        pRipple
+        pButton
+        label="Volver"
+        icon="pi pi-plus"
+        class="p-button-danger flex justify-content-end"
+        [routerLink]="['/heroes/list', hero.id]"
+      ></button>
+  </ng-template>
+</p-card>
+</div>
