@@ -5,6 +5,10 @@ import {  MatInputModule} from "@angular/material/input";
 import {  MatButtonModule} from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDividerModule } from "@angular/material/divider";
+import {MatCardModule  } from "@angular/material/card";
+import {MatSelectModule  } from "@angular/material/select";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -15,7 +19,10 @@ import { MatDividerModule } from "@angular/material/divider";
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }

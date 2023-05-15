@@ -11,7 +11,8 @@ import { PrimengModule } from '../primeng/primeng.module';
 import { MaterialModule } from '../material/material.module';
 import { CardHeroComponent } from './components/card-hero/card-hero.component';
 import { HeroPipe } from './pipes/hero.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationService } from 'primeng/api';
 
 
 @NgModule({
@@ -29,7 +30,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeroesRoutingModule,
     PrimengModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  providers:[
+    ConfirmationService
   ]
 })
 export class HeroesModule { }

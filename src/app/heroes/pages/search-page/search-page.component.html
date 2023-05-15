@@ -1,4 +1,20 @@
 <!-- <div class="flex flex-column">
 
 </div> -->
-<p-autoComplete formControlName="city" [suggestions]="results" placeholder="Buscar Heroe" (completeMethod)="search($event)" class="mr-2"></p-autoComplete>
+<p-autoComplete
+  [formControl]="searInput"
+  [suggestions]="results"
+  placeholder="Buscar Heroe"
+  (completeMethod)="searchHero()"
+  class="mr-2"
+  field="superhero"
+  [showEmptyMessage]="true"
+  [emptyMessage]="'No se encontraron resultados para: ' + searInput.value"
+  (onSelect)="onSelectOption($event)"
+></p-autoComplete>
+
+<!-- <pre>
+{{selectedHero | json}}
+
+</pre> -->
+

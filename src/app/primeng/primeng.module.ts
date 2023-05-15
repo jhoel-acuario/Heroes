@@ -12,7 +12,8 @@ import {CardModule} from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import {PanelModule} from 'primeng/panel';
 import {AutoCompleteModule} from 'primeng/autocomplete';
-
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [],
   imports: [
@@ -29,7 +30,9 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
     PanelModule,
     CardModule,
     TagModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    ConfirmDialogModule,
+    MessagesModule
 
   ]
 })
