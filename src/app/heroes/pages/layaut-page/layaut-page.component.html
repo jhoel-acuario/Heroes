@@ -2,8 +2,8 @@
   <span>
     <app-search-page ></app-search-page>
   </span>
-
-  <button pButton label="Logout" icon="pi pi-power-off" class="mr-2"></button>
+<span>{{user?.user}}</span>
+  <button pButton label="Logout" icon="pi pi-power-off" class="mr-2" (click)="onLogout()"></button>
 </p-menubar>
 <div class="container mt-2">
   <router-outlet></router-outlet>

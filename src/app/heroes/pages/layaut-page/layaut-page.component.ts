@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { User } from 'src/app/auth/interfaces/user.interface';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-layaut-page',
@@ -9,7 +12,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class LayautPageComponent implements OnInit {
   items: MenuItem[]=[];
-  constructor() { }
+  constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
     this.items = [
@@ -35,6 +38,14 @@ export class LayautPageComponent implements OnInit {
           ]
       }
   ];
+  }
+  get user():User| undefined{
+    return this.authService.currentUser
+  }
+
+  onLogout(){
+    this.authService.logout();
+    this.router.navigate(['/auth/login'])
   }
 
 }
